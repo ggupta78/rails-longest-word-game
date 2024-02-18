@@ -1,0 +1,13 @@
+<h1>Games#score</h1>
+
+<% if @valid_letters && @valid_word %>
+  <p>Great job!! The word <%= @word %> is made up of the letters in <%= @letters_grid.join(',') %> and is a valid english word!</p>
+<% elsif @valid_letters && !@valid_word %>
+  <p>Apologies!! The word <%= @word %> is made up of the letters in <%= @letters_grid.join(',') %> BUT is not a valid english word!</p>
+<% else %>
+  <p>
+    Sorry! The letters you have used are not part of the list provided - <%= @letters_grid.join(',') %>!
+  </p>
+<% end %>
+
+<%= link_to 'New Game', new_path %>

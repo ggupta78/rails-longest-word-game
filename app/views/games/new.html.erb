@@ -1,0 +1,18 @@
+<h1 class="text-center my-4">New Game</h1>
+
+<div class="row justify-content-center my-5">
+  <% @letters.each do |letter| %>
+    <div class="btn btn-primary col-1 me-2 text-center" name="letter" style="width: 50px;"><%= letter %></div>
+  <% end %>
+</div>
+
+<div class="row justify-content-center my-5 text-center">
+  <div class="col-6">
+    <form action="/score">
+      <input type="text" name="word">
+      <input type="submit" value="Check">
+      <!-- <input type="hidden" name="letters" value="<%= @letters.join(',') %>"> -->
+      <%= hidden_field_tag 'letters', @letters.join(',') %>
+    </form>
+  </div>
+</div>
